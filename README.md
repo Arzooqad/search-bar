@@ -9,4 +9,5 @@ Simple React + TypeScript + Vite search bar demo.
 
 ### How to use
 - Type "Randall" into the search input to see matching results.
+
 ![App preview](public/preview.png)
