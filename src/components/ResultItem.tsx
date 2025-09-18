@@ -1,11 +1,12 @@
 import { motion } from "framer-motion";
-import { FiCheck, FiExternalLink, FiUser } from "react-icons/fi";
+import { FiCheck, FiUser } from "react-icons/fi";
 import { ImLink } from "react-icons/im";
 import { FaFolder, FaImage, FaPlay } from "react-icons/fa";
 import { Tooltip } from "react-tooltip";
 import type { SearchResult } from "../types";
 import { highlight } from "../utils/utils";
 import classNames from "classnames";
+import { RxExternalLink } from "react-icons/rx";
 
 interface ResultItemProps {
   item: SearchResult;
@@ -132,7 +133,7 @@ const ResultItem: React.FC<ResultItemProps> = ({
           className="p-2 rounded-lg flex items-center gap-1 text-gray-500 hover:text-gray-700 transition"
           title="Open in new tab"
         >
-          <FiExternalLink size={16} />
+          <RxExternalLink size={16} />
           <span className="text-xs">New Tab</span>
         </a>
       </div>
