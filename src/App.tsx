@@ -42,7 +42,7 @@ function App() {
               animate={{ opacity: 1, scaleY: 1, borderRadius: "0 0 1rem 1rem" }}
               exit={{ opacity: 0, scaleY: 0.95, borderRadius: "0 0 1rem 1rem" }}
               transition={{ type: "spring", stiffness: 120, damping: 18 }}
-              className="bg-white shadow p-0 rounded-b-lg origin-top"
+              className="bg-white shadow-md p-0 rounded-b-lg origin-top"
               style={{ willChange: "opacity, transform, border-radius" }}
             >
               <Tabs

@@ -1,6 +1,4 @@
-
-
-import  { forwardRef } from "react";
+import { forwardRef } from "react";
 import { motion } from "framer-motion";
 import { IoSettingsOutline } from "react-icons/io5";
 import { TabKey, type VisibleTabs } from "../types";
@@ -9,18 +7,16 @@ import { mockResults } from "../JSON/mockData";
 import DropdownItem from "./DropDownMenu";
 
 interface TabsProps {
-    activeTab: string;
-    setActiveTab: (tab: string) => void;
-    visibleTabs: VisibleTabs;
-    showDropdown: boolean;
-    toggleDropdown: () => void;
-    toggleTab: (
-      tab: TabKey.Files | TabKey.People | TabKey.Chats | TabKey.Lists
-    ) => void;
-  }
-  
+  activeTab: string;
+  setActiveTab: (tab: string) => void;
+  visibleTabs: VisibleTabs;
+  showDropdown: boolean;
+  toggleDropdown: () => void;
+  toggleTab: (
+    tab: TabKey.Files | TabKey.People | TabKey.Chats | TabKey.Lists
+  ) => void;
+}
 
-// ✅ forwardRef lets parent attach a ref directly to Tabs
 const Tabs = forwardRef<HTMLDivElement, TabsProps>(
   (
     {
@@ -34,17 +30,17 @@ const Tabs = forwardRef<HTMLDivElement, TabsProps>(
     dropdownWrapperRef
   ) => {
     const filteredTabs = TABS.filter(
-      (tab) => tab.key === TabKey.All || visibleTabs[tab.key as keyof VisibleTabs]
+      (tab) =>
+        tab.key === TabKey.All || visibleTabs[tab.key as keyof VisibleTabs]
     );
 
     return (
       <div className="flex border-b items-center justify-between px-2">
-        {/* Tabs */}
         <div className="flex flex-1 overflow-x-auto hide-scrollbar">
           {filteredTabs.map((tab) => (
             <button
               key={tab.key}
-              className={`py-2 px-3 text-center text-sm font-medium transition border-b-2 flex items-center gap-1 ${
+              className={`py-2 px-3 text-center text-sm transition border-b-2 flex items-center gap-1 ${
                 activeTab === tab.key
                   ? "border-black text-black"
                   : "border-transparent text-gray-500 hover:text-black"
@@ -74,7 +70,6 @@ const Tabs = forwardRef<HTMLDivElement, TabsProps>(
           ))}
         </div>
 
-        {/* Dropdown */}
         <div ref={dropdownWrapperRef} className="relative inline-block">
           <button
             className="ml-2 p-1 rounded flex-shrink-0"
@@ -119,5 +114,5 @@ const Tabs = forwardRef<HTMLDivElement, TabsProps>(
   }
 );
 
-Tabs.displayName = "Tabs"; // required when using forwardRef
+Tabs.displayName = "Tabs";
 export default Tabs;

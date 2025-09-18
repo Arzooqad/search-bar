@@ -21,7 +21,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
 }) => {
   return (
     <div
-      className={`relative flex items-center bg-white shadow px-4 py-3 ${
+      className={`relative flex items-center bg-white shadow-md px-4 py-3 ${
         showResults ? "rounded-t-xl" : "rounded-xl"
       }`}
     >
