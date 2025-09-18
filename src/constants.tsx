@@ -12,7 +12,6 @@ export enum TabKey {
   Chats = "chats",
 }
 
-
 export const TABS = [
   { key: TabKey.All, label: "All" },
   { key: TabKey.Files, label: "Files", icon: <GoPaperclip size={14} /> },
