@@ -67,7 +67,6 @@ const ResultItem: React.FC<ResultItemProps> = ({
           </div>
         )}
 
-        {/* Active Dot */}
         {item.status && (
           <span
             className={classNames(
